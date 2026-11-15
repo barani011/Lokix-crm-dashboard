@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOKIX.IN — Service & Logo Design Plans</title>
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            espresso: {
+              950: '#110B08',
+              900: '#150E0A',
+              850: '#1A110C',
+              800: '#211610',
+              750: '#291B14',
+              700: '#36241B',
+              600: '#4A3226',
+            },
+            copper: {
+              300: '#F2A65A',
+              400: '#E89149',
+              500: '#B86234',
+              600: '#A35227',
+              700: '#7D3D1B',
+            },
+            sand: {
+              100: '#F7F3F0',
+              200: '#DDD2CA',
+              300: '#B5A397',
+              400: '#917E71',
+              500: '#6E5D52',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      background-color: #150E0A;
+      color: #F7F3F0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Smooth transitions for price and selection states */
+    .price-animate {
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    }
+    .price-updating {
+      transform: translateY(-3px);
+      opacity: 0.4;
+    }
+
+    /* Custom subtle warm scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #150E0A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #36241B;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B86234;
+    }
+
+    /* Modal Backdrop animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes scaleUp {
+      from { opacity: 0; transform: scale(0.96) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .animate-backdrop {
+      animation: fadeIn 0.2s ease-out forwards;
+    }
+    .animate-modal {
+      animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#150E0A] text-[#F7F3F0] selection:bg-[#B86234]/30 selection:text-[#F2A65A]">
+
+  <!-- Top Navigation / Brand Bar -->
+  <header class="border-b border-[#291B14] bg-[#150E0A]/90 backdrop-blur-md sticky top-0 z-30">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <!-- Brand Identity matching LOKIX.IN Dashboard -->
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-[#B86234] text-white font-extrabold text-base flex items-center justify-center shadow-[0_0_20px_rgba(184,98,52,0.35)]">
+          L
+        </div>
+        <div>
+
+        </div>
+      </div>
+
+      <!-- Right Action: Copy / Inspect Source Code -->
+      <div class="flex items-center gap-2.5">
+        <button
+          type="button"
+          id="open-code-btn"
+          class="px-3.5 py-2 rounded-xl bg-[#211610] hover:bg-[#291B14] border border-[#36241B] text-xs font-semibold text-[#DDD2CA] hover:text-white flex items-center gap-2 transition-all cursor-pointer"
+        >
+          <i data-lucide="code-2" class="w-3.5 h-3.5 text-[#E89149]"></i>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+
+    <!-- Hero Banner matching Dashboard Welcome Card -->
+    <section class="rounded-2xl bg-[#1D130E] border border-[#332219] p-6 sm:p-8 mb-8 sm:mb-10 relative overflow-hidden">
+      <div class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-[#B86234]/10 blur-3xl pointer-events-none"></div>
+      <div class="relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2B1B12] border border-[#4D3020] text-[#F2A65A] text-[11px] font-semibold mb-3">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#E89149]"></i>
+            <span>LOKIX.IN • Software Development &amp; Design Services</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Service Retainers &amp; Brand Design Plans
+          </h1>
+          <p class="text-xs sm:text-sm text-[#B5A397] mt-1.5 max-w-2xl leading-relaxed">
+            Transparent monthly engineering retainers and fixed-price logo identity packages built for startups, growing SaaS products, and ambitious brands.
+          </p>
+        </div>
+
+        <!-- Category Switcher Pills -->
+        <div class="flex flex-wrap items-center gap-1.5 bg-[#130C09] p-1.5 rounded-xl border border-[#2E1F17] self-start lg:self-center shrink-0">
+          <button data-category="all" class="cat-btn active px-3.5 py-2 rounded-lg text-xs font-semibold transition-all bg-[#B86234] text-white shadow-sm cursor-pointer">
+            All Services (6)
+          </button>
+          <button data-category="maintenance" class="cat-btn px-3.5 py-2 rounded-lg text-xs font-medium text-[#B5A397] hover:text-white hover:bg-[#211610] transition-all cursor-pointer">
+            Maintenance Plans
+          </button>
+          <button data-category="logo" class="cat-btn px-3.5 py-2 rounded-lg text-xs font-medium text-[#B5A397] hover:text-white hover:bg-[#211610] transition-all cursor-pointer">
+            Logo Design Packages
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- SECTION 1: WEB & APP MAINTENANCE RETAINERS                          -->
+    <!-- =================================================================== -->
+    <section id="section-maintenance" class="mb-14">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#E89149] mb-1">
+            <span class="w-2 h-2 rounded-full bg-[#B86234]"></span>
+            <span>01 • Monthly Engineering Retainers</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Web &amp; App Maintenance Plans</h2>
+          <p class="text-xs text-[#917E71] mt-1">Click any project tier inside a card to calculate your exact monthly retainer</p>
+        </div>
+
+        <!-- Project-Type Quick Filter Bar -->
+        <div id="filter-bar" class="flex flex-wrap items-center gap-1 bg-[#1D130E] p-1 rounded-xl border border-[#332219]">
+          <button data-filter="all" class="filter-btn active px-2.5 py-1.5 rounded-lg text-[11px] font-semibold transition-all bg-[#B86234] text-white cursor-pointer">
+            All Tiers
+          </button>
+          <button data-filter="Static / Landing Page" class="filter-btn px-2.5 py-1.5 rounded-lg text-[11px] font-medium text-[#B5A397] hover:text-white hover:bg-[#291B14] transition-all cursor-pointer">
+            Static / Landing
+          </button>
+          <button data-filter="Business Website" class="filter-btn px-2.5 py-1.5 rounded-lg text-[11px] font-medium text-[#B5A397] hover:text-white hover:bg-[#291B14] transition-all cursor-pointer">
+            Business Site
+          </button>
+          <button data-filter="E-Commerce" class="filter-btn px-2.5 py-1.5 rounded-lg text-[11px] font-medium text-[#B5A397] hover:text-white hover:bg-[#291B14] transition-all cursor-pointer">
+            E-Commerce
+          </button>
+          <button data-filter="SaaS / Web App" class="filter-btn px-2.5 py-1.5 rounded-lg text-[11px] font-medium text-[#B5A397] hover:text-white hover:bg-[#291B14] transition-all cursor-pointer">
+            SaaS / Web App
+          </button>
+          <button data-filter="Mobile App (iOS + Android)" class="filter-btn px-2.5 py-1.5 rounded-lg text-[11px] font-medium text-[#B5A397] hover:text-white hover:bg-[#291B14] transition-all cursor-pointer">
+            Mobile App
+          </button>
+        </div>
+      </div>
+
+      <!-- 3-Column Maintenance Pricing Grid -->
+      <div id="maintenance-grid" class="grid grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-7 items-stretch">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- Subtle Section Divider -->
+    <div id="section-divider" class="border-t border-[#291B14] my-12"></div>
+
+    <!-- =================================================================== -->
+    <!-- SECTION 2: LOGO DESIGN & BRAND IDENTITY PACKAGES                    -->
+    <!-- =================================================================== -->
+    <section id="section-logo" class="mb-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#E89149] mb-1">
+            <span class="w-2 h-2 rounded-full bg-[#B86234]"></span>
+            <span>02 • One-Time Brand Identity</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Logo Design Packages</h2>
+          <p class="text-xs text-[#917E71] mt-1">Bespoke brand marks, vector source files, 3D mockups, and full brand kits</p>
+        </div>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#1D130E] border border-[#332219] text-[11px] text-[#B5A397]">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#E89149]"></i>
+          <span>100% Commercial Copyright Ownership Included</span>
+        </div>
+      </div>
+
+      <!-- 3-Column Logo Design Pricing Grid -->
+      <div id="logo-grid" class="grid grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-7 items-stretch">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- SLEEK BOOKING / INQUIRY MODAL (DARK ESPRESSO & COPPER THEME)          -->
+  <!-- ===================================================================== -->
+  <div id="inquiry-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-xs animate-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="relative w-full max-w-md bg-[#1D130E] rounded-2xl border border-[#3D291E] shadow-[0_24px_60px_rgba(0,0,0,0.8)] p-6 sm:p-7 animate-modal" onclick="event.stopPropagation()">
+      <!-- Close Button -->
+      <button id="close-modal-btn" type="button" class="absolute top-5 right-5 w-8 h-8 rounded-lg flex items-center justify-center text-[#917E71] hover:text-white hover:bg-[#291B14] transition-colors cursor-pointer" aria-label="Close modal">
+        <i data-lucide="x" class="w-4 h-4 stroke-[2.5]"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="mb-5">
+        <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#2E1C12] border border-[#593622] text-[#F2A65A] text-[11px] font-bold tracking-wide uppercase mb-2.5">
+          <span id="modal-plan-badge">Growth Plan</span>
+          <span>•</span>
+          <span id="modal-sla-badge">24-HR SLA</span>
+        </div>
+        <h3 id="modal-title" class="text-xl font-bold text-white tracking-tight">Book Your Service Plan</h3>
+        <p class="text-xs text-[#917E71] mt-1">Lock in your LOKIX.IN package. Direct onboarding with Barani &amp; team.</p>
+      </div>
+
+      <!-- Selected Summary Box -->
+      <div class="bg-[#140D09] border border-[#2E1F17] rounded-xl p-4 mb-5">
+        <div class="flex items-center justify-between text-xs text-[#917E71] mb-1.5">
+          <span>Selected Package</span>
+          <span class="font-semibold text-white" id="modal-summary-plan">Growth</span>
+        </div>
+        <div id="modal-tier-row" class="flex items-center justify-between text-xs text-[#917E71] mb-3">
+          <span>Project Tier</span>
+          <select id="modal-tier-select" class="text-xs font-semibold text-white bg-[#211610] border border-[#3B271D] rounded-lg px-2.5 py-1 focus:outline-none focus:ring-2 focus:ring-[#B86234]">
+            <!-- Populated dynamically -->
+          </select>
+        </div>
+        <div class="pt-3 border-t border-[#291B14] flex items-baseline justify-between">
+          <span class="text-xs font-semibold text-[#DDD2CA]" id="modal-investment-label">Monthly Investment</span>
+          <div class="text-right">
+            <span id="modal-summary-price" class="text-xl font-extrabold text-white">₹7,000</span>
+            <span id="modal-summary-unit" class="text-xs text-[#917E71] font-medium">/mo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inquiry Form -->
+      <form id="retainer-form" class="space-y-3.5">
+        <div>
+          <label for="client-name" class="block text-xs font-semibold text-[#DDD2CA] mb-1">Your Name / Brand Name</label>
+          <input type="text" id="client-name" required placeholder="Arjun Sharma" class="w-full px-3.5 py-2.5 text-sm bg-[#140D09] text-white placeholder-[#5C4C42] border border-[#332219] rounded-xl focus:outline-none focus:border-[#B86234] focus:ring-2 focus:ring-[#B86234]/20 transition-all" />
+        </div>
+        <div>
+          <label for="client-email" class="block text-xs font-semibold text-[#DDD2CA] mb-1">Work Email or WhatsApp</label>
+          <input type="text" id="client-email" required placeholder="arjun@company.com / +91 98765 43210" class="w-full px-3.5 py-2.5 text-sm bg-[#140D09] text-white placeholder-[#5C4C42] border border-[#332219] rounded-xl focus:outline-none focus:border-[#B86234] focus:ring-2 focus:ring-[#B86234]/20 transition-all" />
+        </div>
+        <div>
+          <label for="client-notes" class="block text-xs font-semibold text-[#DDD2CA] mb-1" id="modal-notes-label">Website URL or Brand Brief <span class="text-[#6E5D52] font-normal">(optional)</span></label>
+          <input type="text" id="client-notes" placeholder="https://yourproduct.com or brief brand description" class="w-full px-3.5 py-2.5 text-sm bg-[#140D09] text-white placeholder-[#5C4C42] border border-[#332219] rounded-xl focus:outline-none focus:border-[#B86234] focus:ring-2 focus:ring-[#B86234]/20 transition-all" />
+        </div>
+
+        <button type="submit" id="submit-inquiry-btn" class="w-full mt-2 py-3 px-4 rounded-xl bg-[#B86234] hover:bg-[#A35227] text-white text-sm font-semibold flex items-center justify-center gap-2 transition-all shadow-[0_6px_20px_rgba(184,98,52,0.3)] cursor-pointer">
+          <span>Confirm &amp; Request Onboarding</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </form>
+
+      <!-- Success State -->
+      <div id="form-success-state" class="hidden text-center py-6">
+        <div class="w-12 h-12 rounded-full bg-emerald-950/80 border border-emerald-700/50 text-emerald-400 flex items-center justify-center mx-auto mb-3">
+          <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+        </div>
+        <h4 class="text-base font-bold text-white">Request Logged in LOKIX.IN!</h4>
+        <p class="text-xs text-[#B5A397] mt-1.5 max-w-xs mx-auto leading-relaxed">
+          We've received your <span id="success-plan-text" class="font-semibold text-[#F2A65A]"></span> request. Barani will connect with you within 2 business hours.
+        </p>
+        <button type="button" id="done-modal-btn" class="mt-5 px-5 py-2 rounded-xl bg-[#291B14] hover:bg-[#36241B] border border-[#452F23] text-white text-xs font-semibold transition-colors cursor-pointer">
+          Back to Plans
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- STANDALONE HTML CODE VIEWER MODAL                                     -->
+  <!-- ===================================================================== -->
+  <div id="code-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-xs animate-backdrop" role="dialog" aria-modal="true">
+    <div class="relative w-full max-w-3xl bg-[#1D130E] rounded-2xl border border-[#3D291E] shadow-2xl p-6 animate-modal flex flex-col max-h-[85vh]" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between pb-4 border-b border-[#2E1F17]">
+        <div>
+          <h3 class="text-base font-bold text-white">Standalone HTML + Tailwind Code</h3>
+          <p class="text-xs text-[#917E71]">Copy and paste this complete single-file code into your LOKIX.IN project.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="copy-code-btn" type="button" class="px-3.5 py-2 rounded-xl bg-[#B86234] hover:bg-[#A35227] text-white text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer">
+            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            <span id="copy-btn-text">Copy Code</span>
+          </button>
+          <button id="close-code-btn" type="button" class="w-8 h-8 rounded-lg flex items-center justify-center text-[#917E71] hover:text-white hover:bg-[#291B14] cursor-pointer">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+      <div class="mt-4 flex-1 overflow-auto rounded-xl bg-[#110B08] border border-[#291B14] p-4">
+        <pre id="source-code-preview" class="font-mono text-[11px] text-[#DDD2CA] leading-relaxed whitespace-pre-wrap break-all"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. MAINTENANCE RETAINER PLANS DATA
+    // =========================================================================
+    const MAINTENANCE_PLANS = [
+      {
+        id: 'essential',
+        category: 'maintenance',
+        name: 'Essential Care',
+        recommended: false,
+        featured: false,
+        iconType: 'monitor',
+        tagline: 'Keep it running, secure, and backed up.',
+        bestFor: 'Best for: Clients who just need stability and peace of mind post-launch.',
+        defaultPrice: '₹3,000',
+        unit: '/mo',
+        ctaText: 'Choose Essential',
+        tiers: [
+          { label: 'Static / Landing Page', price: '₹3,000' },
+          { label: 'Business Website', price: '₹5,000' },
+          { label: 'E-Commerce', price: '₹8,000' },
+          { label: 'SaaS / Web App', price: '₹12,000' },
+          { label: 'Mobile App (Single)', price: '₹10,000' },
+          { label: 'Mobile App (iOS + Android)', price: '₹15,000' }
+        ],
+        featuresHeading: "What's Included",
+        checkStyle: 'muted',
+        features: [
+          '24/7 uptime monitoring & automated alerts',
+          'Daily automated backups + monthly restore test',
+          'Security patching & dependency updates',
+          'SSL & domain renewal management',
+          'Bug fixes — up to 4 hrs/month (critical only)',
+          'Monthly health report (uptime %, performance snapshot)',
+          'Email support — 48-hour response SLA'
+        ],
+        pills: ['48-HR SLA', '4 HRS/MO']
+      },
+      {
+        id: 'growth',
+        category: 'maintenance',
+        name: 'Growth',
+        recommended: true,
+        featured: true,
+        iconType: 'isometric',
+        tagline: 'Keep it running AND improving.',
+        bestFor: 'Best for: Active products that need regular updates, content changes, and performance tuning.',
+        defaultPrice: '₹7,000',
+        unit: '/mo',
+        ctaText: 'Choose Growth',
+        tiers: [
+          { label: 'Static / Landing Page', price: '₹7,000' },
+          { label: 'Business Website', price: '₹12,000' },
+          { label: 'E-Commerce', price: '₹18,000' },
+          { label: 'SaaS / Web App', price: '₹25,000' },
+          { label: 'Mobile App (Single)', price: '₹20,000' },
+          { label: 'Mobile App (iOS + Android)', price: '₹30,000' }
+        ],
+        featuresHeading: 'Everything in Essential, plus',
+        checkStyle: 'copper',
+        features: [
+          'Bug fixes + minor improvements — up to 10 hrs/month',
+          'Performance optimization (Core Web Vitals, DB queries, load speed)',
+          'Content updates — up to 5/month',
+          'Third-party API & integration health checks',
+          'App store compliance updates (mobile)',
+          'Monthly analytics review + recommendations',
+          'Priority WhatsApp + email support — 24-hour SLA',
+          'Staging environment maintenance'
+        ],
+        pills: ['24-HR SLA', '10 HRS/MO']
+      },
+      {
+        id: 'premium',
+        category: 'maintenance',
+        name: 'Premium',
+        recommended: false,
+        featured: false,
+        iconType: 'cross',
+        tagline: 'A dev team on retainer.',
+        bestFor: 'Best for: Business-critical platforms that need dedicated attention, fast turnaround, and continuous development.',
+        defaultPrice: '₹20,000',
+        unit: '/mo',
+        ctaText: 'Choose Premium',
+        tiers: [
+          { label: 'Business Website', price: '₹20,000' },
+          { label: 'E-Commerce', price: '₹35,000' },
+          { label: 'SaaS / Web App', price: '₹50,000' },
+          { label: 'Mobile App (Single)', price: '₹35,000' },
+          { label: 'Mobile App (iOS + Android)', price: '₹55,000' },
+          { label: 'Full Stack (Web + Mobile + Admin)', price: '₹75,000' }
+        ],
+        featuresHeading: 'Everything in Growth, plus',
+        checkStyle: 'copper',
+        features: [
+          'Dev hours — up to 25 hrs/month (features, enhancements, refactors)',
+          'Database optimization & scaling support',
+          'CI/CD pipeline maintenance',
+          'Server & infrastructure management',
+          'Priority bug fixes — 4-hour response, same-day resolution for critical',
+          'Quarterly security audit',
+          'Dedicated WhatsApp group + monthly strategy call',
+          'Up to 5 unused dev hours roll over to next month'
+        ],
+        pills: ['4-HR SLA', '25 HRS/MO']
+      }
+    ];
+
+    // =========================================================================
+    // 2. LOGO DESIGN PACKAGES DATA (Standard ₹3000, Premium ₹5000, Luxury ₹10000)
+    // =========================================================================
+    const LOGO_PLANS = [
+      {
+        id: 'logo-standard',
+        category: 'logo',
+        name: 'Standard',
+        recommended: false,
+        featured: false,
+        iconType: 'pen',
+        tagline: 'Clean, versatile brand mark for startups & new launches.',
+        bestFor: 'Best for: Early-stage founders needing a crisp, print-ready logo fast.',
+        defaultPrice: '₹3,000',
+        unit: ' one-time',
+        ctaText: 'Choose Standard',
+        specsHeading: 'Package Summary',
+        specs: [
+          { label: 'Logo Concepts', value: '2 Concepts' },
+          { label: 'Revision Rounds', value: '3 Revisions' },
+          { label: 'Delivery Timeline', value: '2 – 3 Days' }
+        ],
+        featuresHeading: "What's Included",
+        checkStyle: 'muted',
+        features: [
+          '2 concepts included (3 revisions)',
+          'Logo transparency (High-res PNG)',
+          'Printable file (CMYK / Print-ready PDF)',
+          'Delivery within 2 – 3 days'
+        ],
+        pills: ['2–3 DAYS', '3 REVISIONS']
+      },
+      {
+        id: 'logo-premium',
+        category: 'logo',
+        name: 'Premium',
+        recommended: true,
+        featured: true,
+        iconType: 'layers',
+        tagline: 'Complete vector identity with source files & 3D presentation.',
+        bestFor: 'Best for: Growing brands needing editable vector files and realistic mockups.',
+        defaultPrice: '₹5,000',
+        unit: ' one-time',
+        ctaText: 'Choose Premium',
+        specsHeading: 'Package Summary',
+        specs: [
+          { label: 'Logo Concepts', value: '4 Concepts' },
+          { label: 'Revision Rounds', value: '3 Revisions' },
+          { label: 'Delivery Timeline', value: '3 – 5 Days' }
+        ],
+        featuresHeading: 'Everything in Standard, plus',
+        checkStyle: 'copper',
+        features: [
+          '4 concepts included (3 revisions)',
+          'Logo transparency (High-res PNG)',
+          'Printable file (Print-ready PDF)',
+          'Source file (Editable AI / EPS / SVG)',
+          'Delivery within 3 – 5 days',
+          '3D realistic mockup presentation'
+        ],
+        pills: ['3–5 DAYS', 'SOURCE + 3D']
+      },
+      {
+        id: 'logo-luxury',
+        category: 'logo',
+        name: 'Luxury',
+        recommended: false,
+        featured: false,
+        iconType: 'crown',
+        tagline: 'Full-scale brand system, custom patterns & launch reel.',
+        bestFor: 'Best for: Flagship brands wanting a complete visual identity & lifetime support.',
+        defaultPrice: '₹10,000',
+        unit: ' one-time',
+        ctaText: 'Choose Luxury',
+        specsHeading: 'Package Summary',
+        specs: [
+          { label: 'Logo Concepts', value: '8 Concepts' },
+          { label: 'Revision Rounds', value: '5 Revisions' },
+          { label: 'Delivery Timeline', value: '7 Days' }
+        ],
+        featuresHeading: 'Everything in Premium, plus',
+        checkStyle: 'copper',
+        features: [
+          '8 concepts included (5 revisions)',
+          'Logo transparency (High-res PNG)',
+          'Printable file (Print-ready PDF)',
+          'Source file (Editable AI / EPS / SVG)',
+          'Brand kit (Typography & Color System)',
+          'Custom Brand Pattern',
+          'Delivery within 7 days',
+          'Lifetime support',
+          'Multiple 3D mockups',
+          'Collab Reel (Optional)'
+        ],
+        pills: ['7 DAYS', 'LIFETIME SUPPORT']
+      }
+    ];
+
+    const selectedTiers = {
+      essential: null,
+      growth: null,
+      premium: null
+    };
+
+    // =========================================================================
+    // HELPER: Top Header Icons in Warm Espresso & Copper Palette
+    // =========================================================================
+    function renderTopIcon(type) {
+      if (type === 'monitor') {
+        return `
+          <div class="w-11 h-11 rounded-xl bg-[#261912] border border-[#3B271D] flex items-center justify-center text-[#E89149]">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="12" rx="2" />
+              <line x1="8" y1="20" x2="16" y2="20" />
+              <line x1="12" y1="16" x2="12" y2="20" />
+            </svg>
+          </div>
+        `;
+      }
+
+      if (type === 'isometric') {
+        return `
+          <div class="h-11 flex items-center">
+            <svg width="108" height="44" viewBox="0 0 108 44" fill="none" xmlns="http://www.w3.org/2000/svg" class="overflow-visible">
+              <ellipse cx="54" cy="39" rx="46" ry="4" fill="#0B0705" fill-opacity="0.85"/>
+              <g transform="translate(4, 5) skewY(8)">
+                <rect x="0" y="0" width="44" height="28" rx="3" fill="#2A1C15" stroke="#4A3226" stroke-width="1"/>
+                <rect x="4" y="4" width="14" height="3" rx="1.5" fill="#E89149"/>
+                <rect x="4" y="10" width="22" height="2" rx="1" fill="#6E5D52"/>
+                <rect x="4" y="14" width="18" height="2" rx="1" fill="#4A3226"/>
+                <rect x="28" y="16" width="3" height="8" rx="1" fill="#B86234"/>
+                <rect x="33" y="12" width="3" height="12" rx="1" fill="#E89149"/>
+                <rect x="38" y="14" width="3" height="10" rx="1" fill="#F2A65A"/>
+              </g>
+              <g transform="translate(44, 2) skewY(9)">
+                <rect x="0" y="0" width="34" height="30" rx="3" fill="#140D09" stroke="#B86234" stroke-width="1"/>
+                <circle cx="5" cy="5" r="1.2" fill="#EF4444"/>
+                <circle cx="9" cy="5" r="1.2" fill="#F59E0B"/>
+                <circle cx="13" cy="5" r="1.2" fill="#10B981"/>
+                <rect x="4" y="10" width="12" height="14" rx="1.5" fill="#241711"/>
+                <path d="M6 20L10 15L13 17L15 13" stroke="#F2A65A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="19" y="10" width="11" height="4" rx="1" fill="#B86234"/>
+                <rect x="19" y="16" width="11" height="3" rx="1" fill="#3B271D"/>
+                <rect x="19" y="21" width="8" height="3" rx="1" fill="#3B271D"/>
+              </g>
+              <g transform="translate(74, 6) skewY(10)">
+                <rect x="0" y="0" width="30" height="28" rx="3" fill="#1D130E" stroke="#3D291E" stroke-width="1"/>
+                <rect x="4" y="5" width="10" height="2.5" rx="1" fill="#F2A65A"/>
+                <rect x="4" y="10" width="22" height="6" rx="1.5" fill="#291B14"/>
+                <circle cx="9" cy="21" r="3" stroke="#E89149" stroke-width="1.5"/>
+                <rect x="15" y="19" width="11" height="2" rx="1" fill="#5C4C42"/>
+                <rect x="15" y="22.5" width="7" height="2" rx="1" fill="#5C4C42"/>
+              </g>
+            </svg>
+          </div>
+        `;
+      }
+
+      if (type === 'cross') {
+        return `
+          <div class="w-11 h-11 rounded-xl bg-[#261912] border border-[#3B271D] flex items-center justify-center text-[#F2A65A]">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="square">
+              <line x1="6" y1="6" x2="18" y2="18" />
+              <line x1="18" y1="6" x2="6" y2="18" />
+            </svg>
+          </div>
+        `;
+      }
+
+      if (type === 'pen') {
+        return `
+          <div class="w-11 h-11 rounded-xl bg-[#261912] border border-[#3B271D] flex items-center justify-center text-[#E89149]">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+              <path d="M2 2l7.586 7.586"/>
+              <circle cx="11" cy="11" r="2"/>
+            </svg>
+          </div>
+        `;
+      }
+
+      if (type === 'layers') {
+        return `
+          <div class="w-11 h-11 rounded-xl bg-[#2E1C12] border border-[#6E3E22] flex items-center justify-center text-[#F2A65A] shadow-[0_0_20px_rgba(184,98,52,0.25)]">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+        `;
+      }
+
+      if (type === 'crown') {
+        return `
+          <div class="w-11 h-11 rounded-xl bg-[#261912] border border-[#3B271D] flex items-center justify-center text-[#F2A65A]">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/>
+            </svg>
+          </div>
+        `;
+      }
+    }
+
+    // =========================================================================
+    // HELPER: Feature Checkmark Icon (Warm Sand for Standard/Essential, Copper for Featured/Pro)
+    // =========================================================================
+    function renderCheckIcon(style) {
+      if (style === 'copper') {
+        return `
+          <span class="mt-0.5 w-4 h-4 rounded-full bg-[#B86234] text-white flex items-center justify-center shrink-0">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+        `;
+      }
+      return `
+        <span class="mt-0.5 w-4 h-4 rounded-full bg-[#2E1F17] border border-[#452F23] text-[#D4C3B8] flex items-center justify-center shrink-0">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </span>
+      `;
+    }
+
+    // =========================================================================
+    // RENDER: Maintenance Retainer Cards
+    // =========================================================================
+    function renderMaintenanceCards() {
+      const grid = document.getElementById('maintenance-grid');
+      grid.innerHTML = '';
+
+      MAINTENANCE_PLANS.forEach(plan => {
+        const activeTierIdx = selectedTiers[plan.id];
+        const activeTier = activeTierIdx !== null ? plan.tiers[activeTierIdx] : null;
+        const displayPrice = activeTier ? activeTier.price : plan.defaultPrice;
+
+        const cardClasses = plan.featured
+          ? 'bg-[#1D130E] rounded-2xl border-[1.5px] border-[#B86234] shadow-[0_12px_36px_rgba(184,98,52,0.16)] p-6 sm:p-7 flex flex-col justify-between transition-all duration-200'
+          : 'bg-[#1D130E] rounded-2xl border border-[#332219] shadow-[0_4px_20px_rgba(0,0,0,0.3)] p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 hover:border-[#4D3427]';
+
+        const btnClasses = plan.featured
+          ? 'w-full py-3.5 px-5 rounded-xl bg-[#B86234] hover:bg-[#A35227] active:scale-[0.99] text-white font-semibold text-[13px] flex items-center justify-between transition-all cursor-pointer shadow-[0_4px_16px_rgba(184,98,52,0.35)]'
+          : 'w-full py-3.5 px-5 rounded-xl bg-[#261912] hover:bg-[#322118] border border-[#3B271D] active:scale-[0.99] text-[#F7F3F0] font-semibold text-[13px] flex items-center justify-between transition-all cursor-pointer';
+
+        const cardEl = document.createElement('div');
+        cardEl.className = cardClasses;
+
+        cardEl.innerHTML = `
+          <div>
+            <!-- 1. Top Icon -->
+            <div class="mb-5">
+              ${renderTopIcon(plan.iconType)}
+            </div>
+
+            <!-- 2. Title & Tagline -->
+            <div class="mb-5">
+              <div class="flex items-center gap-2.5 mb-1.5">
+                <h3 class="text-[17px] font-bold text-white tracking-tight">${plan.name}</h3>
+                ${plan.recommended ? `
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-[11px] font-semibold bg-[#332014] border border-[#6E4023] text-[#F2A65A]">
+                    Recommended
+                  </span>
+                ` : ''}
+              </div>
+              <p class="text-[12.5px] text-[#DDD2CA] font-medium leading-snug">${plan.tagline}</p>
+              <p class="text-[11.5px] text-[#917E71] mt-1 leading-relaxed">${plan.bestFor}</p>
+            </div>
+
+            <!-- 3. Price Display -->
+            <div class="mb-5 flex items-baseline gap-1.5">
+              <span class="text-[12px] font-medium ${activeTier ? 'text-[#E89149] font-semibold' : 'text-[#917E71]'}">
+                ${activeTier ? '' : 'from'}
+              </span>
+              <span id="price-${plan.id}" class="price-animate text-[28px] sm:text-[30px] font-extrabold text-white tracking-tight leading-none">
+                ${displayPrice}
+              </span>
+              <span class="text-[13px] font-medium text-[#917E71]">/mo</span>
+              ${activeTier ? `
+                <button
+                  type="button"
+                  onclick="resetPlanTier('${plan.id}')"
+                  class="ml-auto text-[11px] font-medium text-[#F2A65A] hover:text-white underline underline-offset-2 cursor-pointer"
+                  title="Reset to starting price"
+                >
+                  ${activeTier.label} ✕
+                </button>
+              ` : ''}
+            </div>
+
+            <!-- 4. CTA Button -->
+            <div class="mb-6">
+              <button
+                type="button"
+                onclick="openInquiryModal('${plan.id}', 'maintenance')"
+                class="${btnClasses}"
+              >
+                <span>${plan.ctaText}</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="square">
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- 5. Monthly Pricing Tier Table -->
+            <div class="mb-6">
+              <div class="flex items-center justify-between mb-2.5">
+                <h4 class="text-[12px] font-bold text-[#F7F3F0]">Monthly pricing</h4>
+                ${activeTier ? `<span class="text-[10.5px] font-medium text-[#F2A65A]">Selected tier</span>` : ''}
+              </div>
+              <div class="bg-[#140D09] rounded-xl border border-[#2B1D16] overflow-hidden divide-y divide-[#241812]">
+                ${plan.tiers.map((tier, idx) => {
+                  const isSelected = activeTierIdx === idx;
+                  return `
+                    <button
+                      type="button"
+                      onclick="selectPlanTier('${plan.id}', ${idx})"
+                      class="w-full px-3.5 py-2.5 flex items-center justify-between text-left transition-colors cursor-pointer group ${
+                        isSelected
+                          ? 'bg-[#2E1C12] text-white'
+                          : 'hover:bg-[#1E140E] text-[#B5A397]'
+                      }"
+                    >
+                      <span class="text-[11.5px] flex items-center gap-2 ${isSelected ? 'font-semibold text-[#F2A65A]' : 'font-medium text-[#B5A397] group-hover:text-[#F7F3F0]'}">
+                        ${isSelected ? '<span class="w-1.5 h-1.5 rounded-full bg-[#E89149] shrink-0"></span>' : ''}
+                        ${tier.label}
+                      </span>
+                      <span class="text-[11.5px] whitespace-nowrap">
+                        <strong class="font-bold ${isSelected ? 'text-[#F2A65A]' : 'text-white'}">${tier.price}</strong><span class="text-[#917E71] font-normal">/mo</span>
+                      </span>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+
+            <!-- 6. Features Checklist -->
+            <div class="mb-7">
+              <h4 class="text-[12px] font-bold text-[#F7F3F0] mb-3">${plan.featuresHeading}</h4>
+              <ul class="space-y-2.5">
+                ${plan.features.map(feature => `
+                  <li class="flex items-start gap-2.5 text-[12px] text-[#B5A397] leading-snug">
+                    ${renderCheckIcon(plan.checkStyle)}
+                    <span>${feature}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+
+          <!-- 7. Bottom SLA & Hours Pills -->
+          <div class="pt-2 flex items-center gap-2">
+            ${plan.pills.map(pill => `
+              <span class="bg-[#261912] text-[#DDD2CA] font-bold text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md border border-[#3B271D]">
+                ${pill}
+              </span>
+            `).join('')}
+          </div>
+        `;
+
+        grid.appendChild(cardEl);
+      });
+    }
+
+    // =========================================================================
+    // RENDER: Logo Design Packages Cards
+    // =========================================================================
+    function renderLogoCards() {
+      const grid = document.getElementById('logo-grid');
+      grid.innerHTML = '';
+
+      LOGO_PLANS.forEach(plan => {
+        const cardClasses = plan.featured
+          ? 'bg-[#1D130E] rounded-2xl border-[1.5px] border-[#B86234] shadow-[0_12px_36px_rgba(184,98,52,0.16)] p-6 sm:p-7 flex flex-col justify-between transition-all duration-200'
+          : 'bg-[#1D130E] rounded-2xl border border-[#332219] shadow-[0_4px_20px_rgba(0,0,0,0.3)] p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 hover:border-[#4D3427]';
+
+        const btnClasses = plan.featured
+          ? 'w-full py-3.5 px-5 rounded-xl bg-[#B86234] hover:bg-[#A35227] active:scale-[0.99] text-white font-semibold text-[13px] flex items-center justify-between transition-all cursor-pointer shadow-[0_4px_16px_rgba(184,98,52,0.35)]'
+          : 'w-full py-3.5 px-5 rounded-xl bg-[#261912] hover:bg-[#322118] border border-[#3B271D] active:scale-[0.99] text-[#F7F3F0] font-semibold text-[13px] flex items-center justify-between transition-all cursor-pointer';
+
+        const cardEl = document.createElement('div');
+        cardEl.className = cardClasses;
+
+        cardEl.innerHTML = `
+          <div>
+            <!-- 1. Top Icon -->
+            <div class="mb-5">
+              ${renderTopIcon(plan.iconType)}
+            </div>
+
+            <!-- 2. Title & Tagline -->
+            <div class="mb-5">
+              <div class="flex items-center gap-2.5 mb-1.5">
+                <h3 class="text-[17px] font-bold text-white tracking-tight">${plan.name}</h3>
+                ${plan.recommended ? `
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-[11px] font-semibold bg-[#332014] border border-[#6E4023] text-[#F2A65A]">
+                    Recommended
+                  </span>
+                ` : ''}
+              </div>
+              <p class="text-[12.5px] text-[#DDD2CA] font-medium leading-snug">${plan.tagline}</p>
+              <p class="text-[11.5px] text-[#917E71] mt-1 leading-relaxed">${plan.bestFor}</p>
+            </div>
+
+            <!-- 3. Fixed Package Price -->
+            <div class="mb-5 flex items-baseline gap-1.5">
+              <span class="text-[28px] sm:text-[30px] font-extrabold text-white tracking-tight leading-none">
+                ${plan.defaultPrice}
+              </span>
+              <span class="text-[12.5px] font-medium text-[#917E71]">${plan.unit}</span>
+            </div>
+
+            <!-- 4. CTA Button -->
+            <div class="mb-6">
+              <button
+                type="button"
+                onclick="openInquiryModal('${plan.id}', 'logo')"
+                class="${btnClasses}"
+              >
+                <span>${plan.ctaText}</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="square">
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- 5. Package Quick Specs Table (Mirrors Monthly Pricing Box) -->
+            <div class="mb-6">
+              <h4 class="text-[12px] font-bold text-[#F7F3F0] mb-2.5">${plan.specsHeading}</h4>
+              <div class="bg-[#140D09] rounded-xl border border-[#2B1D16] overflow-hidden divide-y divide-[#241812]">
+                ${plan.specs.map(spec => `
+                  <div class="px-3.5 py-2.5 flex items-center justify-between text-[11.5px]">
+                    <span class="font-medium text-[#B5A397]">${spec.label}</span>
+                    <span class="font-bold text-white">${spec.value}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- 6. Deliverables Checklist -->
+            <div class="mb-7">
+              <h4 class="text-[12px] font-bold text-[#F7F3F0] mb-3">${plan.featuresHeading}</h4>
+              <ul class="space-y-2.5">
+                ${plan.features.map((feature, index) => `
+                  <li class="flex items-start gap-2.5 text-[12px] text-[#B5A397] leading-snug">
+                    ${renderCheckIcon(plan.checkStyle)}
+                    <span><strong class="text-[#DDD2CA] font-semibold mr-1">${index + 1}.</strong>${feature}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+
+          <!-- 7. Bottom Turnaround & Guarantee Pills -->
+          <div class="pt-2 flex items-center gap-2">
+            ${plan.pills.map(pill => `
+              <span class="bg-[#261912] text-[#DDD2CA] font-bold text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md border border-[#3B271D]">
+                ${pill}
+              </span>
+            `).join('')}
+          </div>
+        `;
+
+        grid.appendChild(cardEl);
+      });
+    }
+
+    // =========================================================================
+    // INTERACTIVITY: Tier Selection, Category Switcher, Filters & Modals
+    // =========================================================================
+    function selectPlanTier(planId, tierIndex) {
+      if (selectedTiers[planId] === tierIndex) {
+        selectedTiers[planId] = null;
+      } else {
+        selectedTiers[planId] = tierIndex;
+      }
+      renderMaintenanceCards();
+
+      const priceEl = document.getElementById(`price-${planId}`);
+      if (priceEl) {
+        priceEl.classList.add('price-updating');
+        requestAnimationFrame(() => {
+          setTimeout(() => priceEl.classList.remove('price-updating'), 50);
+        });
+      }
+    }
+
+    function resetPlanTier(planId) {
+      selectedTiers[planId] = null;
+      renderMaintenanceCards();
+    }
+
+    // Top Category Switcher ("All Services", "Maintenance Plans", "Logo Design Packages")
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cat-btn').forEach(b => {
+          b.classList.remove('bg-[#B86234]', 'text-white', 'font-semibold', 'shadow-sm');
+          b.classList.add('text-[#B5A397]', 'font-medium');
+        });
+        btn.classList.add('bg-[#B86234]', 'text-white', 'font-semibold', 'shadow-sm');
+        btn.classList.remove('text-[#B5A397]', 'font-medium');
+
+        const cat = btn.getAttribute('data-category');
+        const secMaint = document.getElementById('section-maintenance');
+        const secLogo = document.getElementById('section-logo');
+        const divider = document.getElementById('section-divider');
+
+        if (cat === 'all') {
+          secMaint.classList.remove('hidden');
+          secLogo.classList.remove('hidden');
+          divider.classList.remove('hidden');
+        } else if (cat === 'maintenance') {
+          secMaint.classList.remove('hidden');
+          secLogo.classList.add('hidden');
+          divider.classList.add('hidden');
+        } else if (cat === 'logo') {
+          secMaint.classList.add('hidden');
+          secLogo.classList.remove('hidden');
+          divider.classList.add('hidden');
+        }
+      });
+    });
+
+    // Maintenance Project-Type Filter Bar
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('bg-[#B86234]', 'text-white', 'font-semibold');
+          b.classList.add('text-[#B5A397]', 'font-medium');
+        });
+        btn.classList.add('bg-[#B86234]', 'text-white', 'font-semibold');
+        btn.classList.remove('text-[#B5A397]', 'font-medium');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        MAINTENANCE_PLANS.forEach(plan => {
+          if (filterValue === 'all') {
+            selectedTiers[plan.id] = null;
+          } else {
+            const matchIdx = plan.tiers.findIndex(t => t.label === filterValue);
+            selectedTiers[plan.id] = matchIdx !== -1 ? matchIdx : 0;
+          }
+        });
+
+        renderMaintenanceCards();
+      });
+    });
+
+    // Inquiry Modal Logic
+    const modal = document.getElementById('inquiry-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const doneModalBtn = document.getElementById('done-modal-btn');
+    const tierSelect = document.getElementById('modal-tier-select');
+    const tierRow = document.getElementById('modal-tier-row');
+    const retainerForm = document.getElementById('retainer-form');
+    const successState = document.getElementById('form-success-state');
+    let currentModalPlan = null;
+    let currentModalCategory = 'maintenance';
+
+    function openInquiryModal(planId, category) {
+      currentModalCategory = category;
+      const list = category === 'logo' ? LOGO_PLANS : MAINTENANCE_PLANS;
+      const plan = list.find(p => p.id === planId);
+      if (!plan) return;
+      currentModalPlan = plan;
+
+      retainerForm.classList.remove('hidden');
+      successState.classList.add('hidden');
+
+      document.getElementById('modal-plan-badge').textContent = category === 'logo' ? `Logo • ${plan.name}` : `${plan.name} Plan`;
+      document.getElementById('modal-sla-badge').textContent = plan.pills[0];
+      document.getElementById('modal-summary-plan').textContent = category === 'logo' ? `Logo Design — ${plan.name}` : plan.name;
+
+      if (category === 'maintenance') {
+        tierRow.classList.remove('hidden');
+        document.getElementById('modal-investment-label').textContent = 'Monthly Investment';
+        document.getElementById('modal-summary-unit').textContent = '/mo';
+        tierSelect.innerHTML = plan.tiers.map((t, i) => `
+          <option value="${i}">${t.label} (${t.price}/mo)</option>
+        `).join('');
+
+        const activeIdx = selectedTiers[plan.id] !== null ? selectedTiers[plan.id] : 0;
+        tierSelect.value = activeIdx;
+        document.getElementById('modal-summary-price').textContent = plan.tiers[activeIdx].price;
+      } else {
+        tierRow.classList.add('hidden');
+        document.getElementById('modal-investment-label').textContent = 'One-Time Package Fee';
+        document.getElementById('modal-summary-unit').textContent = ' one-time';
+        document.getElementById('modal-summary-price').textContent = plan.defaultPrice;
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      lucide.createIcons();
+    }
+
+    tierSelect.addEventListener('change', (e) => {
+      if (!currentModalPlan || currentModalCategory !== 'maintenance') return;
+      const idx = parseInt(e.target.value, 10);
+      const tier = currentModalPlan.tiers[idx];
+      if (tier) {
+        document.getElementById('modal-summary-price').textContent = tier.price;
+        selectedTiers[currentModalPlan.id] = idx;
+        renderMaintenanceCards();
+      }
+    });
+
+    function closeInquiryModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    closeModalBtn.addEventListener('click', closeInquiryModal);
+    doneModalBtn.addEventListener('click', closeInquiryModal);
+    modal.addEventListener('click', closeInquiryModal);
+
+    retainerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!currentModalPlan) return;
+      let summaryText = '';
+      if (currentModalCategory === 'maintenance') {
+        const idx = parseInt(tierSelect.value, 10);
+        const tier = currentModalPlan.tiers[idx];
+        summaryText = `${currentModalPlan.name} (${tier.label} — ${tier.price}/mo)`;
+      } else {
+        summaryText = `Logo Design ${currentModalPlan.name} (${currentModalPlan.defaultPrice})`;
+      }
+      document.getElementById('success-plan-text').textContent = summaryText;
+      retainerForm.classList.add('hidden');
+      successState.classList.remove('hidden');
+      lucide.createIcons();
+    });
+
+    // Source Code Viewer Modal
+    const codeModal = document.getElementById('code-modal');
+    const openCodeBtn = document.getElementById('open-code-btn');
+    const closeCodeBtn = document.getElementById('close-code-btn');
+    const copyCodeBtn = document.getElementById('copy-code-btn');
+    const codePreview = document.getElementById('source-code-preview');
+
+    openCodeBtn.addEventListener('click', () => {
+      codePreview.textContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      codeModal.classList.remove('hidden');
+      codeModal.classList.add('flex');
+      lucide.createIcons();
+    });
+
+    closeCodeBtn.addEventListener('click', () => {
+      codeModal.classList.add('hidden');
+      codeModal.classList.remove('flex');
+    });
+
+    codeModal.addEventListener('click', () => {
+      codeModal.classList.add('hidden');
+      codeModal.classList.remove('flex');
+    });
+
+    copyCodeBtn.addEventListener('click', () => {
+      const fullSource = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      const textarea = document.createElement('textarea');
+      textarea.value = fullSource;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+
+      const btnText = document.getElementById('copy-btn-text');
+      btnText.textContent = 'Copied!';
+      setTimeout(() => {
+        btnText.textContent = 'Copy Code';
+      }, 2000);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeInquiryModal();
+        codeModal.classList.add('hidden');
+        codeModal.classList.remove('flex');
+      }
+    });
+
+    // Initial Render
+    renderMaintenanceCards();
+    renderLogoCards();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

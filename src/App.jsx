@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { supabase } from './lib/supabase';
+import { Package } from 'lucide-react';
 import {
   LayoutDashboard,
   FolderKanban,
@@ -1332,6 +1333,7 @@ export default function App() {
         { id: 'clients', label: 'Clients', icon: Users, badge: clients.length },
         { id: 'work-tracker', label: 'Work Tracker', icon: Timer, live: timerRunning },
         { id: 'tasks', label: 'Tasks', icon: CheckSquare, badge: tasks.filter((t) => t.status !== 'Completed').length }
+
       ]
     },
     {
@@ -1351,7 +1353,19 @@ export default function App() {
         { id: 'settings', label: 'Settings', icon: Settings },
         { id: 'profile', label: 'Profile', icon: UserRound }
       ]
-    }
+    },
+
+    {
+  label: 'OTHERS',
+  items: [
+    { id: 'reports', label: 'Reports', icon: ChartNoAxesCombined },
+    { id: 'notes', label: 'Notes', icon: NotebookPen },
+    { id: 'settings', label: 'Settings', icon: Settings },
+    { id: 'profile', label: 'Profile', icon: UserRound },
+    { id: 'services-plans', label: 'Services & Plans', icon: Package },
+  ]
+},
+
   ];
 
   // Status badge helper
@@ -4186,6 +4200,19 @@ export default function App() {
           {activePage === 'notes' && renderNotes()}
           {activePage === 'settings' && renderSettings()}
           {activePage === 'profile' && renderProfile()}
+          {activePage === 'profile' && renderProfile()}
+
+{activePage === 'services-plans' && (
+  <iframe
+    src={`${import.meta.env.BASE_URL}services-plans.html`}
+    title="Services & Plans"
+    className="w-full border-0 block"
+    style={{
+      height: 'calc(100vh - 75px)',
+      backgroundColor: '#100A06'
+    }}
+  />
+)}
         </main>
       </div>
 
