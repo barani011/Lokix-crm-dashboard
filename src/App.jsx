@@ -1057,7 +1057,7 @@ export default function App() {
         const [projectsResult, clientsResult, paymentsResult] = await Promise.all([
           supabase.from('projects').select('*').eq('user_id', user.id).order('created_at', { ascending: false }),
           supabase.from('clients').select('*').eq('user_id', user.id).order('created_at', { ascending: false }),
-          supabase.from('payments').select('*').eq('user_id', user.id).order('created_at', { ascending: false })
+          supabase.from('payments').select('*').eq('user_id', user.id).order('created_at', { ascending: true })
         ]);
 
         if (projectsResult.error) throw new Error(`Projects: ${projectsResult.error.message}`);
