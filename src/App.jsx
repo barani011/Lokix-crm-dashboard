@@ -4321,7 +4321,6 @@ const renderReports = () => {
           {activePage === 'notes' && renderNotes()}
           {activePage === 'settings' && renderSettings()}
           {activePage === 'profile' && renderProfile()}
-          {activePage === 'profile' && renderProfile()}
 
 {activePage === 'services-plans' && (
   <iframe
