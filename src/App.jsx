@@ -3603,25 +3603,66 @@ export default function App() {
   // ============================================================================
   // RENDER: 10. REPORTS PAGE (RECHARTS VISUAL ANALYTICS)
   // ============================================================================
-  const renderReports = () => {
-    const monthlyRevenueData = [
-      { month: 'Jun', revenue: 68000, completed: 2 },
-      { month: 'Jul', revenue: 82000, completed: 3 },
-      { month: 'Aug', revenue: 95000, completed: 3 },
-      { month: 'Sep', revenue: 112000, completed: 4 },
-      { month: 'Oct', revenue: 145000, completed: 4 },
-      { month: 'Nov', revenue: 165000, completed: 5 }
-    ];
+  
+const renderReports = () => {
+  // Generate revenue data from actual Supabase payments
+  const today = new Date();
 
-    const projectHoursChart = projects.slice(0, 6).map((p) => {
-      const secs = workLogs
-        .filter((w) => w.project_id === p.id || w.project_name === p.project_name)
-        .reduce((a, b) => a + (Number(b.duration_seconds) || 0), 0);
+  const monthlyRevenueData = Array.from(
+    { length: 6 },
+    (_, index) => {
+      const date = new Date(
+        today.getFullYear(),
+        today.getMonth() - 5 + index,
+        1
+      );
+
+      const year = date.getFullYear();
+      const monthNumber = String(
+        date.getMonth() + 1
+      ).padStart(2, '0');
+
+      const monthKey = `${year}-${monthNumber}`;
+
+      const revenue = payments
+        .filter((payment) =>
+          (payment.payment_date || '').slice(0, 7) === monthKey
+        )
+        .reduce(
+          (total, payment) =>
+            total + (Number(payment.amount_received) || 0),
+          0
+        );
+
       return {
-        name: p.project_name.slice(0, 14),
-        hours: Number(((secs || 7200) / 3600).toFixed(1))
+        month: date.toLocaleDateString('en-IN', {
+          month: 'short'
+        }),
+        monthKey,
+        revenue
       };
-    });
+    }
+  );
+
+  const projectHoursChart = projects.slice(0, 6).map((p) => {
+    const secs = workLogs
+      .filter(
+        (w) =>
+          w.project_id === p.id ||
+          w.project_name === p.project_name
+      )
+      .reduce(
+        (a, b) =>
+          a + (Number(b.duration_seconds) || 0),
+        0
+      );
+
+    return {
+      name: p.project_name.slice(0, 14),
+      hours: Number((secs / 3600).toFixed(1))
+    };
+  });
+
 
     return (
       <div className="space-y-6">
@@ -3655,29 +3696,86 @@ export default function App() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Monthly Revenue Chart */}
-          <div className="bg-[#24170F] border border-[#3A2518] rounded-2xl p-5">
-            <h3 className="text-base font-bold text-white mb-1">Monthly Revenue Trend (INR ₹)</h3>
-            <p className="text-xs text-[#A6A09A] mb-4">Jun 2026 – Nov 2026 freelance income trajectory</p>
-            <div className="relative h-72 w-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={monthlyRevenueData} margin={{ top: 10, right: 15, left: 0, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#3A2518" />
-                  <XAxis dataKey="month" stroke="#A6A09A" tick={{ fill: '#A6A09A', fontSize: 11 }} />
-                  <YAxis stroke="#A6A09A" tick={{ fill: '#A6A09A', fontSize: 11 }} />
-                  <Tooltip
-                    contentStyle={{
-                      backgroundColor: '#17120F',
-                      borderColor: '#A94F1D',
-                      borderRadius: '12px',
-                      color: '#FFFFFF'
-                    }}
-                  />
-                  <Area type="monotone" dataKey="revenue" name="Revenue (₹)" stroke="#F5B942" fill="#A94F1D" fillOpacity={0.35} />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-          </div>
+          
+{/* Monthly Revenue Chart */}
+<div className="bg-[#24170F] border border-[#3A2518] rounded-2xl p-5">
+
+  <h3 className="text-base font-bold text-white mb-1">
+    Monthly Revenue Trend (INR ₹)
+  </h3>
+
+  <p className="text-xs text-[#A6A09A] mb-4">
+    Actual revenue collected from Supabase payments · Last 6 months
+  </p>
+
+  <div className="relative h-72 w-full">
+
+    <ResponsiveContainer width="100%" height="100%">
+
+      <AreaChart
+        data={monthlyRevenueData}
+        margin={{ top: 10, right: 15, left: 10, bottom: 5 }}
+      >
+
+        <CartesianGrid
+          strokeDasharray="3 3"
+          stroke="#3A2518"
+        />
+
+        <XAxis
+          dataKey="month"
+          stroke="#A6A09A"
+          tick={{ fill: '#A6A09A', fontSize: 11 }}
+        />
+
+        <YAxis
+          stroke="#A6A09A"
+          tick={{ fill: '#A6A09A', fontSize: 11 }}
+          tickFormatter={(value) =>
+            `₹${Number(value).toLocaleString('en-IN')}`
+          }
+        />
+
+        <Tooltip
+          formatter={(value) => [
+            `₹${Number(value || 0).toLocaleString('en-IN')}`,
+            'Revenue Collected'
+          ]}
+          labelFormatter={(label, payload) => {
+            const key = payload?.[0]?.payload?.monthKey;
+
+            return key
+              ? new Date(`${key}-01T00:00:00`).toLocaleDateString(
+                  'en-IN',
+                  { month: 'long', year: 'numeric' }
+                )
+              : label;
+          }}
+          contentStyle={{
+            backgroundColor: '#17120F',
+            borderColor: '#A94F1D',
+            borderRadius: '12px',
+            color: '#FFFFFF'
+          }}
+        />
+
+        <Area
+          type="monotone"
+          dataKey="revenue"
+          name="Revenue Collected"
+          stroke="#F5B942"
+          strokeWidth={2}
+          fill="#A94F1D"
+          fillOpacity={0.35}
+        />
+
+      </AreaChart>
+
+    </ResponsiveContainer>
+
+  </div>
+</div>
+
 
           {/* Project-wise Working Hours Chart */}
           <div className="bg-[#24170F] border border-[#3A2518] rounded-2xl p-5">
