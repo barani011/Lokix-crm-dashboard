@@ -1531,7 +1531,8 @@ export default function App() {
                   mode: 'add',
                   data: {
                     project_name: '',
-                    client_name: clients[0]?.company_name || 'NERO Apparel Co.',
+                    client_id: clients[0]?.id || '',
+                    client_name: clients[0]?.company_name || '',
                     category: 'Website Development',
                     description: '',
                     budget: 45000,
@@ -1848,13 +1849,31 @@ export default function App() {
       return;
     }
 
-    // Client IDs in the old demo data (for example cli-101) are not UUIDs.
-    // Until a client is created in the Supabase clients table, store client_id as NULL.
+    // Resolve the selected client from the Supabase clients table.
+    // For older projects, fall back to the saved company name when editing.
+    const selectedClient =
+      clients.find((client) => client.id === form.client_id) ||
+      clients.find(
+        (client) =>
+          (client.company_name || '').trim().toLowerCase() ===
+          (form.client_name || '').trim().toLowerCase()
+      );
+
+    if (!selectedClient) {
+      showToast(
+        clients.length
+          ? 'Please select a client from the dropdown.'
+          : 'Please add a client before creating a project.',
+        'warning'
+      );
+      return;
+    }
+
     const projectData = {
       user_id: authUser.id,
-      client_id: null,
+      client_id: selectedClient.id,
       project_name: form.project_name.trim(),
-      client_name: (form.client_name || 'Direct Client').trim(),
+      client_name: selectedClient.company_name,
       category: form.category || 'Other',
       description: form.description || '',
       budget: Number(form.budget) || 0,
@@ -1940,7 +1959,8 @@ export default function App() {
                 mode: 'add',
                 data: {
                   project_name: '',
-                  client_name: clients[0]?.company_name || 'NERO Apparel Co.',
+                  client_id: clients[0]?.id || '',
+                  client_name: clients[0]?.company_name || '',
                   category: 'Website Development',
                   description: '',
                   budget: 50000,
@@ -2255,7 +2275,10 @@ export default function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {filteredClients.map((client) => {
             const clientProjects = projects.filter(
-              (p) => p.client_id === client.id || p.client_name.toLowerCase() === client.company_name.toLowerCase()
+              (p) =>
+                p.client_id === client.id ||
+                (p.client_name || '').trim().toLowerCase() ===
+                  (client.company_name || '').trim().toLowerCase()
             );
             return (
               <div
@@ -4318,15 +4341,42 @@ export default function App() {
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="block text-[#A6A09A] mb-1">Client Name</label>
-                    <input
-                      type="text"
+                    <select
                       required
-                      value={projectModal.data.client_name}
-                      onChange={(e) =>
-                        setProjectModal({ ...projectModal, data: { ...projectModal.data, client_name: e.target.value } })
+                      value={
+                        clients.find((client) => client.id === projectModal.data.client_id)?.id ||
+                        clients.find(
+                          (client) =>
+                            (client.company_name || '').trim().toLowerCase() ===
+                            (projectModal.data.client_name || '').trim().toLowerCase()
+                        )?.id ||
+                        ''
                       }
+                      onChange={(e) => {
+                        const selectedClient = clients.find(
+                          (client) => client.id === e.target.value
+                        );
+
+                        setProjectModal({
+                          ...projectModal,
+                          data: {
+                            ...projectModal.data,
+                            client_id: selectedClient?.id || '',
+                            client_name: selectedClient?.company_name || ''
+                          }
+                        });
+                      }}
                       className="w-full px-3 py-2 rounded-xl bg-[#100A06] border border-[#3A2518] text-white"
-                    />
+                    >
+                      <option value="" disabled>
+                        {clients.length ? 'Select Client' : 'Add a client first'}
+                      </option>
+                      {clients.map((client) => (
+                        <option key={client.id} value={client.id}>
+                          {client.company_name} - {client.full_name}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                   <div>
                     <label className="block text-[#A6A09A] mb-1">Category</label>
